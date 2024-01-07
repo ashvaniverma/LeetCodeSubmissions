@@ -1,0 +1,7 @@
+WITH CTE as (
+SELECT customer_number ,COUNT(order_number)  AS NUMORDER
+FROM Orders 
+GROUP BY customer_number)
+
+SELECT CUSTOMER_NUMBER 
+FROM CTE WHERE NUMORDER = (SELECT max(NUMORDER) FROM cte);
