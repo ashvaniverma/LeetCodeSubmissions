@@ -1,1 +1,1 @@
-select MAX(salary) as SecondHighestSalary from Employee Where salary not in (select MAX(salary) from Employee);
+select max(salary) as SecondHighestSalary from employee where salary not in (select max(salary) from employee);
